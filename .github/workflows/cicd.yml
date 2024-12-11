@@ -37,10 +37,10 @@ jobs:
         key: ${{ secrets.SSH_KEY }}
         port: 22
         script: |
-          docker stop nurda  true
-          docker rm nurda  true
-          docker pull ${{ secrets.DOCKER_USERNAME }}/nurda:latest
-          docker run -d --name nurda -p 5000:5000 ${{ secrets.DOCKER_USERNAME }}/nurda:latest
+          sudo docker stop nurda  true
+          sudo docker rm nurda  true
+          sudo docker pull ${{ secrets.DOCKER_USERNAME }}/nurda:latest
+          sudo docker run -d --name nurda -p 5000:5000 ${{ secrets.DOCKER_USERNAME }}/nurda:latest
 
 
     - name: successful completion
